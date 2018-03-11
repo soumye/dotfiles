@@ -1,7 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
-
   export ZSH=/home/soumye/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -29,7 +28,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
- ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -51,7 +50,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,17 +93,15 @@ unset XDG_CURRENT_DESKTOP
 #MY ALIASES
 alias update= "sudo apt-get update"
 alias oo="xdg-open"
-	 
+alias dirs="dirs -v"
+
 #Touchpad Settingso
 #synclient MaxTapTime=0
 synclient VertEdgeScroll=0
 
-if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-        source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+#Powerline
+if [[ -r /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+        source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
 fi
-
-fortune -s | cowsay
-
-#Adding Anaconda to Path
-export PATH="/home/soumye/anaconda3/bin:$PATH"
-
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64/
+export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64/ 
