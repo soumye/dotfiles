@@ -171,15 +171,18 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
+        #font pango:Inconsolata for Powerline, FontAwesome 13
+        #font pango:PowerlineFont 12
         font pango:DejaVu Sans Mono, Awesome 12
         #font pango:Noto Sans, FontAwesome 12
         position top
-        status_command ~/.config/i3/i3status_spotify.sh
+        #status_command ~/.config/i3/i3status_spotify.sh
         status_command i3status -c ~/.config/i3/i3status.conf
-	#i3bar_command i3bar --transparency
+	    i3bar_command i3bar --transparency
+        #status_command python /home/soumye/.local/lib/python2.7/site-packages/powerline/bindings/i3/powerline-i3.py
         colors {
-                #statusline          $text-colour
-	   	background   #2f363f
+            #statusline          $text-colour
+	   	    background   #2f363f
 	    	statusline #ffffff
 	     	separator #666666
 
@@ -268,6 +271,6 @@ exec --no-startup-id "compton -b --config ~/.config/compton/compton.config"
 exec --no-startup-id bash ~/.config/i3/battery.sh
 
 #Gaps related stuff
-for_window [class="^.*"] border pixel 2
-gaps inner 5
-gaps outer 5
+for_window [class="^.*"] border pixel 4
+gaps inner 6
+gaps outer 2

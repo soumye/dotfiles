@@ -105,9 +105,9 @@ alias dirs="dirs -v"
 
 export EDITOR=code
 
-alias mila_screen="xrandr --output HDMI1 --right-of eDP1 --mode 2560x1440;feh --bg-scale ~/Pictures/wallpaper.jpg"
-alias udem_screen="xrandr --output HDMI1 --right-of eDP1 --mode 1920x1080;feh --bg-scale ~/Pictures/wall2.jpg"
-alias off_screen="xrandr --output HDMI1 --off"
+alias mila_screen="xrandr --output HDMI-1-1 --right-of eDP1-1 --mode 2560x1440;feh --randomize --bg-scale ~/Pictures/walls/*"
+alias udem_screen="xrandr --output HDMI1 --right-of eDP1 --mode 1920x1080;feh --randomize --bg-scale ~/Pictures/walls/*"
+alias mila_screen_off="xrandr --output HDMI-1-1 --off"
 alias curls='curl --silent'
 alias gco='git checkout'
 alias json='jq '.' -C'
@@ -120,8 +120,13 @@ alias gr='git rebase'
 alias dc='docker-compose'
 alias h='history'
 alias dcr='docker-compose'
-
+alias gpython3='/usr/bin/python'
 # Fortune cookies
 if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
    fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
 fi
+
+# Powerline
+. /home/soumye/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+HISTCONTROL=ignoreboth
